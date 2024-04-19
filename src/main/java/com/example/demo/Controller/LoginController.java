@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("Kintai/*")
 @Controller
 public class LoginController {
-  @GetMapping("Login")
-  public String open(Model model) {
-    String str = "ログイン画面";
-    model.addAttribute("value", str);
-    return "Login";
-  }
-}
+	@GetMapping("Login")
+	public String open(Model model) {
+		String str = "ログイン画面";
+		model.addAttribute("value", str);
+		return "Login";
+		}
+	}
