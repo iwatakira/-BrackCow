@@ -8,7 +8,8 @@
 	<form action = "/Kintai/MyPage">
 	<h1 th:text="${value}"></h1>
 	<p>ユーザーIDとパスワードを入力してください</p>
-	<input type="number" value="" placeholder = "ユーザーID" name="UserId">	<input type="number" 	value="" placeholder = "パスワード" name="Pass">
+	<input type="number" value="" placeholder = "ユーザーID" name="UserId" 	required>
+	<input type="password" value="" placeholder = "パスワード" name="Pass"	required>
 	<input type="submit" value="ログイン"/>
 </body>
 </html>
