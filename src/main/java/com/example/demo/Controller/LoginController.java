@@ -13,5 +13,5 @@ public class LoginController {
 		String str = "ログイン画面";
 		model.addAttribute("value", str);
 		return "Login";
-		}
 	}
+}
