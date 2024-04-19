@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns;th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>ログインページ</title>
 </head>
 <body>
-	<form action = "/Kintai/MyPage">
+	<form method="post" action = "/Kintai/MyPage">
 	<h1 th:text="${value}"></h1>
 	<p>ユーザーIDとパスワードを入力してください</p>
 	<input type="number" value="" placeholder = "ユーザーID" name="UserId" 	required>
-	<input type="number" 	value="" placeholder = "パスワード" name="Pass"	required>
+	<input type="password" value="" placeholder = "パスワード" name="Pass"	required>
 	<input type="submit" value="ログイン"/>
 </body>
 </html>
