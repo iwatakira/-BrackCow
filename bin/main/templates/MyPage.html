@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="jp" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>勤怠管理マイページ</title>
+<title>勤怠管理ユーザーマイページ</title>
 </head>
 <body>
-	<h1 th:text="${value}">マイページ</h1>
-	<h2 th:text="${value}">****さん、ようこそ！</h2>
+	<h1 th:text="${value1}"></h1>
+	<h2>[[${value2}]] さん、ようこそ！</h2>
 	
-	<a href = http://localhost:8080/Kintai/InOut.html><btn>出勤怠管理ページへ</btn></a>
+	<a href = http://localhost:8080/Kintai/InOut><btn>出勤怠管理ページへ</btn></a><br>
+	<a href = http://localhost:8080/Kintai/Login><btn>戻る</btn></a>
 </body>
 </html>
