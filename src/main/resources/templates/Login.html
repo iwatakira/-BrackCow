@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>ログインページ</title>
+<link th:href="@{/css/Login.css}" rel="stylesheet">
 </head>
+
 <body>
 	<form action = "/Kintai/MyPage">
 	<h1 th:text="${value}"></h1>
 	<p>ユーザーIDとパスワードを入力してください</p>
-	<input type="number" value="" placeholder = "ユーザーID" name="UserId" 	required/>
-	<input type="password" value="" placeholder = "パスワード" name="Pass"	required/>
+	<input type="number" value="" placeholder = "ユーザーID" name="UserId" 	required/><br>
+	<input type="password" value="" placeholder = "パスワード" name="Pass"	required/><br>
 	<input type="submit" value="ログイン"/>
 </body>
 </html>
