@@ -3,12 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>勤怠管理ユーザーマイページ</title>
+<link rel="stylesheet" href="/css/MyPage.css" type="text/css">
 </head>
 <body>
 	<h1 th:text="${value3}"></h1>
-	<h2>[[${ID}]] さん、ようこそ！</h2>
+	<h2>[[${Name}]](ID:[[${ID}]]) さん、ようこそ！</h2>
 	
-	<a href = http://localhost:8080/Kintai/InOut><btn>出勤怠管理ページへ</btn></a><br>
-	<a href = http://localhost:8080/Kintai/Login><btn>戻る</btn></a>
+	<div class="btn1">
+		<button onclick="location.href='http://localhost:8080/Kintai/InOut'">１．出勤怠管理ページへ</button>
+	</div>
+	<div class="btn2">
+		<button onclick="location.href='http://localhost:8080/Kintai/Login'">戻る</button>
+	</div>
 </body>
 </html>
