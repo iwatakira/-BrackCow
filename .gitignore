@@ -25,3 +25,6 @@ replay_pid*
 bin/main/.gitignore
 .gradle
 .settings
+bin/.gitignore
+bin/main/application.properties
+src/main/resources/application.properties
