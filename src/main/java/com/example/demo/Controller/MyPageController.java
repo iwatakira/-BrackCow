@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("Kintai/*")
 @Controller
 public class MyPageController {
-  @GetMapping("MyPage")
-  public String open(Model model) {
-    String str = "マイページ";
-    model.addAttribute("value", str);
-    return "Mypage";
-  }
+	@GetMapping("MyPage")
+	public String open(Model model) {
+		String str1 = "ユーザーマイページ";
+		String str2 = "****";
+		model.addAttribute("value1", str1);
+		model.addAttribute("value2", str2);
+		return "MyPage";
+	}
 }
