@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>	出,退勤チェック</title>
+</head>
+<body>
+    <h1>	出,退勤時間の表示</h1>
+    <div id="dataDisplay"></div>
+	<h2>	出勤時間</h2>
+    <script>
+		fetch('C:\Users\matsu\OneDrive\Desktop\kintai\src\Kintai\Databases\EmployeeDataList.java')
+		    .then(response => response.text())
+		    .then(data => {
+		        document.getElementById('dataDisplay').innerText = data;
+		    });	
+			</script>	
+			<script>
+		<h2>	退勤時間</h2>
+			fetch('C:\Users\matsu\OneDrive\Desktop\kintai\src\Kintai\Databases\EmployeeDataList.java')
+			    .then(response => response.text())
+			    .then(data => {
+			        document.getElementById('dataDisplay').innerText = data;
+			    });
+    </script>
+	
+	
+</body>
+</html>
