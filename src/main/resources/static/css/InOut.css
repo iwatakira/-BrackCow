@@ -1,0 +1,20 @@
+h1 {
+    text-align:center;
+    background-color: rgb(128, 255, 128);
+    width:auto;
+}
+
+body{
+    text-align:center;
+}
+
+button {
+    border-radius: 10px;
+    width: 150px; /* 幅を指定 */
+    height: 50px; /* 高さを指定 */
+    font-size: 16px; /* テキストのフォントサイズを指定 */
+}
+
+button:active {
+    background-color: oldlace /* ボタンが押されたときの背景色を赤色に変更 */
+}
