@@ -135,7 +135,7 @@ public class EmployeeRepository {
 	private EmployeeData mapToData(Map<String, Object> map) {
 		EmployeeData data = new EmployeeData(
 			(int) map.get("id"),
-			(int) map.get("password"),
+			(String) map.get("password"),
 			(String) map.get("name"),
 			(boolean) map.get("admin"),
 			(boolean) map.get("working"),
