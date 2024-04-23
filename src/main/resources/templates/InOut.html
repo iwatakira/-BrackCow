@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	// 時間表示を更新（JavaSclipt)
+    function updateClock() {
+        var now = new Date();
+        var formattedTime = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日 " + 
+                            now.getHours() + "時" + now.getMinutes() + "分" + now.getSeconds() + "秒";
+        document.getElementById("currentTime").innerText = formattedTime;
+    }
+
+    // ページロード後に1秒ごとに時計を更新
+    window.onload = function() {
+        updateClock();
+        setInterval(updateClock, 1000);
+    };	
+</script>
 </head>
 <body>
-	<h1 th:text="${value}"></h1>
+    <h6 th:text="${value}"></h6>
+        
+    <form id="form" action="/Kintai/doAction" method="post">  
+        <input type="hidden" id="startTime" name="startTime" value="">
+        <button type="submit" name="action" value="出勤">出勤</button>
+        <button type="submit" name="action" value="退勤">退勤</button>
+    </form>
+
+    <p id="currentTime"></p>
 </body>
 </html>
