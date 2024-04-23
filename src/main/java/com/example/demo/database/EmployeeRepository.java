@@ -24,7 +24,7 @@ public class EmployeeRepository {
 	 * @throws DataAccessException データのアクセスに失敗したときの例外
 	 */
 	public List<EmployeeData> getAllData() throws DataAccessException {
-		String query = "SELECT * FROM employees";
+		String query = "SELECT * FROM employees;";
 		List<Map<String, Object>> queryList = jdbc.queryForList(query);
 		
 		List<EmployeeData> dataList = new ArrayList<>();
@@ -43,7 +43,7 @@ public class EmployeeRepository {
 	 * @throws DataAccessException データのアクセスに失敗したときの例外
 	 */
 	public int count() throws DataAccessException {
-		String query = "SELECT COUNT(*) FROM employees";
+		String query = "SELECT COUNT(*) FROM employees;";
 		int count = jdbc.queryForObject(query, Integer.class);
 		return count;
 	}
@@ -54,9 +54,8 @@ public class EmployeeRepository {
 	 * @return データの有無
 	 */
 	public boolean existFromId(int id) throws DataAccessException {
-		String query = String.format("SELECT COUNT(*) FROM employees WHERE id == %d", id);
+		String query = String.format("SELECT COUNT(*) FROM employees WHERE id = %d;", id);
 		int count = jdbc.queryForObject(query, Integer.class);
-		
 		if(count > 0) {
 			return true;
 		} else {
@@ -71,7 +70,7 @@ public class EmployeeRepository {
 	 * @throws DataAccessException データのアクセスに失敗したときの例外
 	 */
 	public EmployeeData getFromID(int id) throws DataAccessException {
-		String query = String.format("SELECT COUNT(*) FROM employees WHERE id == %d", id);
+		String query = String.format("SELECT * FROM employees WHERE id = %d;", id);
 		List<Map<String, Object>> queryList = jdbc.queryForList(query);
 		
 		if(queryList.size() == 1) {
@@ -99,7 +98,7 @@ public class EmployeeRepository {
 				+ "working,"
 				+ "inWorkTime,"
 				+ "outWorkTime)"
-				+ "VALUES(?, ?, ?, ?, ?, ?)";
+				+ "VALUES(?, ?, ?, ?, ?, ?);";
 		int rowNum = jdbc.update(query,
 				data.getId(),
 				data.getPassword(),
@@ -120,7 +119,7 @@ public class EmployeeRepository {
 	 * @throws DataAccessException データのアクセスに失敗したときの例外
 	 */
 	public void deleteFromId(int id) throws DataAccessException {
-		String query = String.format("DELETE FROM employees WHERE id == %d", id);
+		String query = String.format("DELETE FROM employees WHERE id = %d;", id);
 		int rowNum = jdbc.update(query);
 		
 		if(rowNum != 0) {
