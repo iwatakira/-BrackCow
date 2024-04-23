@@ -9,6 +9,8 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.Secure.Hash256;
+
 /**
  * 社員データのリポジトリ
  * MySQLのデータベース操作や取得を行う
@@ -91,6 +93,7 @@ public class EmployeeRepository {
 	 * @throws DataAccessException データのアクセスに失敗したときの例外
 	 */
 	public void insert(EmployeeData data) throws DataAccessException {
+		String hashedPass = Hash256.HashStringSHA256(data.getPassword());
 		String query = "INSERT INTO employees ( id,"
 				+ "password,"
 				+ "name,"
@@ -98,10 +101,10 @@ public class EmployeeRepository {
 				+ "working,"
 				+ "inWorkTime,"
 				+ "outWorkTime)"
-				+ "VALUES(?, ?, ?, ?, ?, ?);";
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?);";
 		int rowNum = jdbc.update(query,
 				data.getId(),
-				data.getPassword(),
+				hashedPass,
 				data.getName(),
 				data.isAdmin(),
 				data.isWorking(),
