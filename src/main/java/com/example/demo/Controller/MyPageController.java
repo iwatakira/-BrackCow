@@ -32,8 +32,8 @@ public class MyPageController {
 		return "MyPage";
 	}
 	
-	@PostMapping("check")
-	public String postInOut(@RequestParam("UserId")int str,@RequestParam("Pass")String str2, Model model) {
+	@PostMapping("InOut")
+	public String postInOut(@RequestParam("UserId")int str, Model model) {
 		
 		model.addAttribute("UserId", str);
 				
