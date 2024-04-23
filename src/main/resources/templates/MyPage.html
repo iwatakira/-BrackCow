@@ -2,9 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>勤怠管理ユーザーマイページ</title>
+<link rel="stylesheet" href="/css/MyPage.css" type="text/css">
 </head>
 <body>
-	<h1 th:text="${value}"></h1>
+	<h1 th:text="${value3}"></h1>
+	<h2>[[${Name}]](ID:[[${ID}]]) さん、ようこそ！</h2>
+	
+	<div class="btn1">
+		<button onclick="location.href='http://localhost:8080/Kintai/InOut'">１．出勤怠管理ページへ</button>
+	</div>
+	<div class="btn2">
+		<button onclick="location.href='http://localhost:8080/Kintai/Login'">戻る</button>
+	</div>
 </body>
 </html>

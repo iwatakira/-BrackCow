@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<h1 th:text="${value}"></h1>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>管理者画面</title>
+		<link th:href="@{/css/admin.css}" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="box">
+
+		<h1 th:text="${value}"></h1>
+		<h2>ようこそ</h2>
+		
+		<button onclick="location.href='http://localhost:8080/Kintai/Log'">
+		社員管理画面</button>
+
+		<button onclick="location.href='http://localhost:8080/Kintai/Login'">
+		ログアウト</button>
+
+		</div>
+	</body>
 </html>
