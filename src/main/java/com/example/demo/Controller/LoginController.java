@@ -35,8 +35,8 @@ public class LoginController {
 		if(checkid)
 		{
 			EmployeeData data = emplorepo.getFromID(str);
-			int pass =  data.getPassword(); 
-			if(pass == str2)
+			String pass =  data.getPassword(); 
+			if(pass.equals(str2))
 			{
 				ModelAndView model = new ModelAndView("redirect:/Kintai/MyPage");
 				model.addObject("UserId", str);
