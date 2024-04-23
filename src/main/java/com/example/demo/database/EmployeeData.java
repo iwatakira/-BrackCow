@@ -5,7 +5,7 @@ package com.example.demo.database;
  */
 public class EmployeeData {
 	private int id;
-	private int password;
+	private String password;
 	private String name;
 	private boolean admin;
 	private boolean working;
@@ -22,7 +22,7 @@ public class EmployeeData {
 	 * @param inWorkTime
 	 * @param outWorkTime
 	 */
-	public EmployeeData(int id, int password, String name, boolean admin, boolean working, String inWorkTime, String outWorkTime) {
+	public EmployeeData(int id, String password, String name, boolean admin, boolean working, String inWorkTime, String outWorkTime) {
 		this.id = id;
 		this.password = password;
 		this.name = name;
@@ -34,7 +34,7 @@ public class EmployeeData {
 	
 	// ゲッター
 	public int getId() { return id; }
-	public int getPassword() { return password; }
+	public String getPassword() { return password; }
 	public String getName() { return name; }
 	public boolean isAdmin() { return admin; }
 	public boolean isWorking() { return working; }
@@ -43,7 +43,7 @@ public class EmployeeData {
 	
 	@Override
 	public String toString() {
-		String data = String.format("Employees(id=%d, password=%d, name=%s, admin=%b, working=%b, inWorkTime=%s, outWorkTime=%s",
+		String data = String.format("Employees(id=%d, password=%s, name=%s, admin=%b, working=%b, inWorkTime=%s, outWorkTime=%s",
 				id, password, name, admin, working, inWorkTime);
 		return data;
 	}
