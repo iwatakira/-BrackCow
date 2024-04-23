@@ -26,10 +26,10 @@ public class LoginController {
 	}
 
 	@PostMapping("check")
-	public ModelAndView postLogin(@RequestParam("UserId")int str,@RequestParam("Pass")int str2/*,Model model*/) {
+	public ModelAndView postLogin(@RequestParam("UserId")int str,@RequestParam("Pass")String str2/*,Model model*/) {
 		
 		//model.addAttribute("ID",str);
-		//model.addAttribute("PASS",str2);		
+		//model.addAttribute("PASS",str2);
 		boolean checkid = emplorepo.existFromId(str);
 		
 		if(checkid)
