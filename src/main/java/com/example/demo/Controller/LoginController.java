@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.Secure.Hash256;
 import com.example.demo.database.EmployeeData;
 import com.example.demo.database.EmployeeRepository;
 
@@ -36,7 +37,7 @@ public class LoginController {
 		{
 			EmployeeData data = emplorepo.getFromID(str);
 			String pass =  data.getPassword(); 
-			if(pass.equals(str2))
+			if(pass.equals(Hash256.HashStringSHA256(str2)))
 			{
 				ModelAndView model = new ModelAndView("redirect:/Kintai/MyPage");
 				model.addObject("UserId", str);
