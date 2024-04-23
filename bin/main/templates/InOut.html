@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+	// 時間表示を更新（JavaSclipt)
     function updateClock() {
         var now = new Date();
         var formattedTime = now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日 " + 
@@ -15,7 +16,7 @@
     window.onload = function() {
         updateClock();
         setInterval(updateClock, 1000);
-    };
+    };	
 </script>
 </head>
 <body>

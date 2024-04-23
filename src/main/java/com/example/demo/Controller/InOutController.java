@@ -18,6 +18,15 @@ public class InOutController {
         return "InOut";
     }   
     
+    /**
+     * ボタンを押したら出退勤の記録をする
+     * @param action
+     * @param startTime
+     * @param model
+     * @return
+     * @author 菅原 凜
+     * @version 4
+     */
     @PostMapping("doAction")
     public String doAction(@RequestParam String action, @RequestParam(required = false) String startTime, Model model) {
         if ("出勤".equals(action)) {
