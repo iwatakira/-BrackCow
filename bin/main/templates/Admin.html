@@ -9,8 +9,8 @@
 	<body>
 		<div class="box">
 
-		<h1 th:text="${value}"></h1>
-		<h2>ようこそ</h2>
+		<h1 th:text="${Title}"></h1>
+		<h2>[[${Name}]] さん(ID:[[${ID}]])、ようこそ</h2>
 		
 		<button onclick="location.href='http://localhost:8080/Kintai/Log'">
 		従業員管理画面</button>
