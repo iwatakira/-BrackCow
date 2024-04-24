@@ -27,7 +27,7 @@ public class LoginController {
 	}
 
 	@PostMapping("check")
-	public ModelAndView postLogin(@RequestParam("UserId")int str,@RequestParam("Pass")String str2/*,Model model*/) {
+	public ModelAndView postLogin(@RequestParam("UserId")int str,@RequestParam("Pass")String str2) {
 		
 		//model.addAttribute("ID",str);
 		//model.addAttribute("PASS",str2);
@@ -41,7 +41,6 @@ public class LoginController {
 			{
 				ModelAndView model = new ModelAndView("redirect:/Kintai/MyPage");
 				model.addObject("UserId", str);
-				model.addObject("Pass", str2);
 				return model;
 			}
 		}
