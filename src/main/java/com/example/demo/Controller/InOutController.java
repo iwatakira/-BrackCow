@@ -25,23 +25,16 @@ public class InOutController {
      * @param model
      * @return
      * @author 菅原 凜
-     * @version 4
+     * @version 6
      */
     @PostMapping("doAction")
     public String doAction(@RequestParam String action, @RequestParam(required = false) String startTime, Model model) {
         if ("出勤".equals(action)) {
-            if (startTime != null && !startTime.isEmpty()) {
-                model.addAttribute("value", "既に出勤済みです");
-            } else {
-                model.addAttribute("value", "出勤しました");
-            }
+            model.addAttribute("value", "出勤しました");
         } else if ("退勤".equals(action)) {
-            if (startTime != null && !startTime.isEmpty()) {
-                model.addAttribute("value", "退勤しました");
-            } else {
-                model.addAttribute("value", "退勤しました");
-            }
+            model.addAttribute("value", "退勤しました");
         }
         return "InOut";
+    
     }
 }
