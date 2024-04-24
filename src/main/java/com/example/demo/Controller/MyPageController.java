@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,6 +16,8 @@ public class MyPageController {
 	@Autowired
 	EmployeeRepository empRepo;
 	
+	int id = 0;
+	
 	@GetMapping("MyPage")
 	public String openMyPage(@RequestParam("UserId")int str,Model model) {
 		String title = "ユーザーマイページ";
@@ -27,27 +28,13 @@ public class MyPageController {
 		Name = em.getName();
 		AdminFlag = em.isAdmin();
 		
+		id = str;
+		
 		model.addAttribute("Title", title);
 		model.addAttribute("Name",Name);
 		model.addAttribute("ID",str);
 		model.addAttribute("AdminFlag",AdminFlag);
 		
 		return "MyPage";
-	}
-	
-	@PostMapping("InOut")
-	public String postInOut(@RequestParam("UserId")int str, Model model) {
-		
-		model.addAttribute("UserId", str);
-				
-		return "InOut";
-	}
-	
-	@PostMapping("Admin")
-	public String postAdmin(@RequestParam("UserId")int str, Model model) {
-		
-		model.addAttribute("UserId", str);
-				
-		return "Admin";
 	}
 }
