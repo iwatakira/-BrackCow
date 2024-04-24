@@ -18,16 +18,19 @@ public class MyPageController {
 	EmployeeRepository empRepo;
 	
 	@GetMapping("MyPage")
-	public String openMyPage(@RequestParam("UserId")int str,@RequestParam("Pass")String str2,Model model) {
+	public String openMyPage(@RequestParam("UserId")int str,Model model) {
 		String title = "ユーザーマイページ";
 		String Name = "ユーザーネーム_初期値";
+		boolean AdminFlag = false;
 		
 		EmployeeData em = empRepo.getFromID(str);
 		Name = em.getName();
+		AdminFlag = em.isAdmin();
 		
 		model.addAttribute("Title", title);
 		model.addAttribute("Name",Name);
 		model.addAttribute("ID",str);
+		model.addAttribute("AdminFlag",AdminFlag);
 		
 		return "MyPage";
 	}
@@ -38,5 +41,13 @@ public class MyPageController {
 		model.addAttribute("UserId", str);
 				
 		return "InOut";
+	}
+	
+	@PostMapping("Admin")
+	public String postAdmin(@RequestParam("UserId")int str, Model model) {
+		
+		model.addAttribute("UserId", str);
+				
+		return "Admin";
 	}
 }
