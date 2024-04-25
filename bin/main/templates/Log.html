@@ -2,44 +2,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link th:href="@{/css/Log.css}" rel="stylesheet">
+<title>従業員管理画面</title>
 </head>
 <body>
 	<h1 th:text="${value}"></h1>
 	<table border="1">
-	<tr>
-		<th>名前</th>
-		<th>ID</th>
-		<th>パスワード</th>
-		<th>管理者権限</th>
-		<th>出勤状態</th>
-		<th>出勤時間</th>
+		<thead>
+		<tr>
+			<th>名前</th>
+			<th>ID</th>
+			<th>管理者権限</th>
+			<th>出勤状態</th>
+			<th>出勤時間</th>
+		</tr>
+		</thead>
+	<tbody>
+	<tr th:if="${!#lists.isEmpty(users)}" th:each="user : ${users}">
+		<td th:text="${user.name}"></td>
+		<td th:text="${user.id}"></td>
+		<td th:if="${user.admin}">あり</td>
+		<td th:unless="${user.admin}">なし</td>
+		<td th:if="${user.working}">出勤中</td>
+		<td th:unless="${user.working}">退勤中</td>
+		<td th:text="${user.inWorkTime}"></td>
 	</tr>
-	<tr>
-		<td>田中</td>
-		<td>454545</td>
-		<td>454545</td>
-		<td>あり</td>
-		<td>出勤中</td>
-		<td>45:45:45</td>
-	</tr>
-	<tr>
-		<td>んん～まかううっっっ!!!!</td>
-		<td>111111</td>
-		<td>111111</td>
-		<td>なし</td>
-		<td>退勤中</td>
-		<td>--:--:--</td>
-	</tr>
-	<tr>
-		<td>ガチイク!</td>
-		<td>191919</td>
-		<td>11919</td>
-		<td>なし</td>
-		<td>出勤中</td>
-		<td>19:19:19</td>
-	</tr>
+	</tbody>
 	</table>
+
+	<button onclick="location.href='http://localhost:8080/Kintai/Login'">
+	ログアウト</button>
 </body>
 </html>
 
