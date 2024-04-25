@@ -10,10 +10,17 @@
 	<h2>[[${Name}]] さん(ID:[[${ID}]])、ようこそ！</h2>
 	
 	<div class="btn1">
-		<button onclick="location.href='http://localhost:8080/Kintai/InOut'">１．出勤怠管理ページへ</button>
+		<button th:onclick="|location.href='http://localhost:8080/Kintai/InOut?UserId=__${ID}__'|">１．勤怠管理ページへ</button>
 	</div>
-	<div class="btn2">
+	
+	<div class="btn1">
+		<span th:if="${AdminFlag}"><button th:onclick="|location.href='http://localhost:8080/Kintai/Admin?UserId=__${ID}__'|">２．管理者用ページへ</button></span>
+	</div>
+	
+	<div class="btn1">
 		<button onclick="location.href='http://localhost:8080/Kintai/Login'">ログアウト</button>
 	</div>
+		
+	
 </body>
 </html>
